@@ -1,0 +1,233 @@
+Configuracion:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [seccion]
+      unique: true
+  columns:
+    seccion: { type: string(255), notnull: true }
+    contenido: { type: text, notnull: true }
+    imagen: { type: string(255), notnull: true }
+
+CategoriasPublicaciones:
+  actAs: 
+    Timestampable: true
+    Sortable: true
+    Sluggable:
+      fields: [categoria]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria: { type: string(255), notnull: true }
+    slug: { type: string(255), notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+
+Publicaciones:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [titulo]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria_id: { type: integer }
+    titulo: { type: string(255), notnull: true }
+    contenido: { type: text, notnull: true }
+    descripcion_corta: { type: text, notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    CategoriasPublicaciones: { local: categoria_id, foreign: id, onDelete: cascade }
+
+PublicacionesGaleria:
+  columns:
+    publicacion_id: { type: integer }
+    titulo: { type: string(255), notnull: false, default: '' }
+    contenido: { type: text, notnull: false, default: '' }
+    tipo_archivo: { type: string(255), notnull: false, default: 1 }
+    archivo: { type: string(255), notnull: true }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    Publicaciones: { local: publicacion_id, foreign: id, onDelete: cascade, foreignAlias: PublicacionesGaleria }
+
+CategoriasBackstage:
+  actAs: 
+    Timestampable: true
+    Sortable: true
+    Sluggable:
+      fields: [categoria]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria: { type: string(255), notnull: true }
+    slug: { type: string(255), notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+
+Backstage:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [titulo]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria_id: { type: integer }
+    titulo: { type: string(255), notnull: true }
+    contenido: { type: text, notnull: true }
+    descripcion_corta: { type: text, notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    CategoriasBackstage: { local: categoria_id, foreign: id, onDelete: cascade }
+
+BackstageGaleria:
+  columns:
+    publicacion_id: { type: integer }
+    titulo: { type: string(255), notnull: false, default: '' }
+    contenido: { type: text, notnull: false, default: '' }
+    tipo_archivo: { type: string(255), notnull: false, default: 1 }
+    archivo: { type: string(255), notnull: true }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    Backstage: { local: publicacion_id, foreign: id, onDelete: cascade, foreignAlias: BackstageGaleria }
+
+
+CategoriasTalento:
+  actAs: 
+    Timestampable: true
+    Sortable: true
+    Sluggable:
+      fields: [categoria]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria: { type: string(255), notnull: true }
+    slug: { type: string(255), notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+
+Talento:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [titulo]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria_id: { type: integer }
+    titulo: { type: string(255), notnull: true }
+    contenido: { type: text, notnull: true }
+    actualmente: { type: text, notnull: false }
+    pagina_web: { type: string(150), notnull: false }
+    twitter: { type: string(150), notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    CategoriasTalento: { local: categoria_id, foreign: id, onDelete: cascade }
+
+TalentoGaleria:
+  columns:
+    publicacion_id: { type: integer }
+    titulo: { type: string(255), notnull: false, default: '' }
+    contenido: { type: text, notnull: false, default: '' }
+    tipo_archivo: { type: string(255), notnull: false, default: 1 }
+    archivo: { type: string(255), notnull: true }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    Talento: { local: publicacion_id, foreign: id, onDelete: cascade, foreignAlias: TalentoGaleria }
+
+CategoriasVentas:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [categoria]
+      unique: true
+      canUpdate: true
+  columns:
+    bloque: {type: integer, default: 1}
+    categoria: { type: string(255), notnull: false }
+
+Ventas:
+  actAs:
+    Timestampable: true
+    Sluggable:
+      fields: [titulo]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria_id: { type: integer }
+    titulo: { type: string(255), notnull: true }
+    categorias: { type: string(255), notnull: true, default: 'Actriz/Conductora' }
+    contenido: { type: text, notnull: true }
+    disponible_para: { type: text, notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    CategoriasVentas: { local: categoria_id, foreign: id, onDelete: cascade }
+
+VentasGaleria:
+  columns:
+    ventas_id: { type: integer }
+    titulo: { type: string(255), notnull: false, default: '' }
+    contenido: { type: text, notnull: false, default: '' }
+    tipo_archivo: { type: string(255), notnull: false, default: 1 }
+    archivo: { type: string(255), notnull: true }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    Ventas: { local: ventas_id, foreign: id, onDelete: cascade, foreignAlias: VentasGaleria }
+
+Newsletter:
+  actAs: 
+    Timestampable: true
+    Sortable: true
+  columns:
+    nombre: { type: string(255), notnull: true }
+    email: { type: text, notnull: true }
+    is_active: { type: boolean, notnull: false, default: true }
+
+TemplatesNewsletters:
+  actAs: 
+    Timestampable: true
+    Sortable: true
+    Sluggable:
+      fields: [titulo]
+      unique: true
+      canUpdate: true
+  columns:
+    titulo: { type: string(255), notnull: true }
+    date_newsletter: { type: date, notnull: false }
+    slug: { type: string(255), notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+
+PublicacionesNewsletters:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [titulo]
+      unique: true
+      canUpdate: true
+  columns:
+    template_id: { type: integer }
+    titulo: { type: string(255), notnull: true }
+    contenido: { type: text, notnull: true }
+    tipo_archivo: { type: integer, notnull: false, default: 1 }
+    archivo: { type: string(255), notnull: true }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    is_active: { type: boolean, notnull: false, default: false }
+    position: {type: integer(4)}
+  relations:
+    TemplatesNewsletters: { local: template_id, foreign: id, onDelete: cascade }
+    
+MovimientosNewsletters:
+  actAs: 
+    Timestampable: true
+  columns:
+    fecha_enviados: { type: date, notnull: false }
+    cuantos_enviados: {type: integer(4),notnull: false, default: 0}    

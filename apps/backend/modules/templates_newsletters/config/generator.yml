@@ -1,0 +1,42 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           TemplatesNewsletters
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          templates_newsletters
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        titulo:  {label: Titulo}
+        position:   {label: Orden}
+        date_newsletter: {label: 'Fecha', date_format:'dd/MM/yy'}
+        is_active:  {label: Activa}
+      list:
+        title:    Templates Newsletters
+        display:  [position,titulo,date_newsletter,is_active]
+        sort:     [position, asc]
+        object_actions:
+          Arriba:
+            action: promote
+          Abajo:
+            action: demote
+          _edit:    {label: Editar}
+          _delete:  {label: Eliminar}
+      filter:  ~
+      form:    
+      edit:
+        title:               Modificar Template "%%titulo%%"
+        display:
+          "Publicaciones":   [_photoUpload]
+          "Template":        [titulo,date_newsletter,is_active]
+      new:
+        title:               Crear Template
+        display:
+          "Template":       [titulo,date_newsletter,is_active]

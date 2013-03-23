@@ -1,0 +1,171 @@
+GeneraMusicaSecciones:
+  actAs: { Timestampable: ~ }
+  columns:
+    titulo: { type: string(255), notnull: true }
+    descripcion: { type: text, notnull: true }
+    slug: { type: string(255), notnull: true }
+
+GeneraMusicaNovedades:
+  actAs: { Timestampable: ~ }
+  columns:
+    descripcion: { type: text, notnull: true }
+    categoria: { type: string(255), notnull: false }
+    titulo: { type: string(255), notnull: true }
+    resume: { type: string(255), notnull: true }
+    imagen: { type: string(255), notnull: true }
+    promoted: { type: boolean }
+    
+
+GeneraMusicaEventos:
+  actAs: { Timestampable: ~ }
+  columns:
+    nombre: { type: string(255), notnull: true }
+    parent_id: { type: integer }
+    categoria_id: { type: integer, notnull: true }
+    resume: { type: string(255), notnull: true }
+    description: { type: text, notnull: true }
+    imagen_central: { type: string(255), notnull: true }
+    imagen_lateral: { type: string(255), notnull: true }
+    tags: { type: string(255), notnull: true }
+    promoted: { type: boolean, default: false }
+    fecha: { type: date }
+    locacion: { type: string(255), notnull: true }
+  relations:
+    GeneraMusicaEventos: { local: parent_id, foreign: id, onDelete: cascade }
+    GeneraMusicaCategoriasEventos: { local: categoria_id, foreign: id, onDelete: cascade }
+
+
+GeneraMusicaCategoriasEventos:
+  actAs: { Timestampable: ~ }
+  columns:
+    nombre: { type: string(255), notnull: true }
+
+GeneraMusicaRegistro:
+  actAs: { Timestampable: ~ }
+  columns:
+    nombre: { type: string(255), notnull: true }
+    e_mail: { type: string(255), notnull: true }
+    sexo: { type: boolean }
+    edad: { type: string(255) }
+    newsletter: { type: boolean, default: true }
+
+GeneraMusicaContacto:
+  actAs: { Timestampable: ~ }
+  columns:
+    nombre: { type: string(255), notnull: true }
+    e_mail: { type: string(255), notnull: true }
+    asunto: { type: string(255), notnull: true }
+    telefono: { type: string(255) }
+    mensaje: { type: mediumtext, notnull: true }
+    
+GeneraMusicaEventosGaleria:
+  actAs: { Timestampable: ~ }
+  columns:
+    evento_id: { type: integer, notnull: true }
+    upload: { type: string(255) }
+    titulo: { type: string(255) }
+  relations:
+    GeneraMusicaEventos: { local: evento_id, foreign: id, onDelete: cascade }
+
+GeneraMusicaProduccionGaleria:
+  actAs: { Timestampable: ~ }
+  columns:
+    upload: { type: string(255) }
+    titulo: { type: string(255) }
+    
+GeneraMusicaManagementGaleria:
+  actAs: { Timestampable: ~ }
+  columns:
+    upload: { type: string(255) }
+    titulo: { type: string(255) }
+
+GeneraMusicaVentasGaleria:
+  actAs: { Timestampable: ~ }
+  columns:
+    upload: { type: string(255) }
+    titulo: { type: string(255) }
+
+GeneraMusicaAboutGaleria:
+  actAs: { Timestampable: ~ }
+  columns:
+    upload: { type: string(255) }
+    titulo: { type: string(255) }
+
+GeneraMusicaMedios:
+  actAs: { Timestampable: ~ }
+  columns:
+    titulo: { type: string(255) }
+    description: { type: text }
+
+GeneraMusicaNoticiasGaleria:
+  actAs: { Timestampable: ~ }
+  columns:
+    upload: { type: string(255) }
+    titulo: { type: string(255) }
+
+GeneraMusicaNoticiasGaleriaGrupos:
+  actAs: { Timestampable: ~ }
+  columns:
+    title: { type: string(255) }
+
+
+GeneraMusicaNoticiasGaleria:
+  actAs: { Timestampable: ~ }
+  columns:
+    upload: { type: string(255) }
+    galeria_id: { type: integer, notnull: true }
+    titulo: { type: string(255) }
+    fecha: { type: date }
+
+  relations:
+   GeneraMusicaNoticiasGaleriaGrupos: { local: galeria_id, foreign: id, onDelete: cascade }
+
+
+GeneraMusicaNoticiasBoletinesGrupos:
+  actAs: { Timestampable: ~ }
+  columns:
+    title: { type: string(255) }
+
+
+GeneraMusicaNoticiasBoletinesGaleria:
+  actAs: { Timestampable: ~ }
+  columns:
+    upload: { type: string(255) }
+    galeria_id: { type: integer, notnull: true }
+    titulo: { type: string(255) }
+    fecha: { type: date }
+
+  relations:
+   GeneraMusicaNoticiasBoletinesGrupos: { local: galeria_id, foreign: id, onDelete: cascade }
+
+GeneraMusicaMediosGaleria:
+  actAs: { Timestampable: ~ }
+  columns:
+    upload: { type: string(255) }
+    titulo: { type: string(255) }
+
+
+GeneraMusicaMp3:
+  actAs: { Timestampable: ~ }
+  columns:
+    title: { type: string(255), notnull: true }
+    upload: { type: string(255), notnull: true }
+
+GeneraMusicaClientes:
+  actAs: { Timestampable: ~ }
+  columns:
+    nombre: { type: string(255), notnull: true }
+    tipo: { type: varchar,  size: "'open','close'", notnull: true }
+    upload: { type: string(255), notnull: true }
+
+
+GeneraMusicaNewsletter:
+  actAs: { Timestampable: ~ }
+  columns:
+    email: { type: string(255), notnull: true }
+
+GeneraMusicaContactoContrataciones:
+  actAs: { Timestampable: ~ }
+  columns:
+    upload: { type: string(255) }
+    titulo: { type: string(255) }

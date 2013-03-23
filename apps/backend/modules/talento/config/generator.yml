@@ -1,0 +1,43 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Talento
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          talento
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        categoria_id: {label: Seccion}
+        categorias_talento: {label: Seccion}
+        position: {label: Orden}
+        titulo: {label: Titulo}
+        contenido: {label: 'Descripcion'}
+        pagina_web: {label: 'Pagina Web http://'}
+        is_active: {label: Activa, help: 'Para desactivar o activar publicacion'}
+      list:
+        title: Publicaciones de Seccion Principal
+        display: [position,categorias_talento,titulo,is_active]
+        sort: [position, asc]
+        object_actions:
+          _edit: {label: Editar}
+          _delete: {label: Eliminar}
+        table_method: retrieveBackendCategoriasList
+      filter:  ~
+      form:    
+      edit:
+        title:               Modificar Publicacion de Seccion Talento "%%titulo%%"
+        display:
+          "Galeria":        [_photoUpload]
+          "Publicacion":    [categoria_id,titulo,contenido, actualmente,pagina_web,twitter,thumbnail,is_active]
+      new:
+        title:              Crear Publicacion de Seccion Talento
+        display:
+          "Publicacion":     [categoria_id,titulo,contenido, actualmente,pagina_web,twitter,thumbnail,is_active]
+

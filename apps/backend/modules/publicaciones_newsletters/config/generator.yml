@@ -1,0 +1,40 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           PublicacionesNewsletters
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          publicaciones_newsletters
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        template_id: {label: Template}
+        templates_newsletters: {label: Template}
+        position: {label: Orden}
+        titulo: {label: Titulo}
+      list:
+        title: Publicaciones Newsletters
+        display: [position,templates_newsletters,titulo,html_thumbnail,contenido]
+        sort: [position, asc]
+        object_actions:
+          _edit: {label: Editar}
+          _delete: {label: Eliminar}
+#        table_method: retrieveBackendPublicacionesList
+      filter:  ~
+      form:    
+      edit:
+        title:           Modificar Publicacion "%%titulo%%"
+        display:
+          "Registro":    [template_id,titulo,contenido]
+          "Archivo":     [archivo,thumbnail]
+      new:
+        title:            Crear Publicacion
+        display:
+          "Registro":    [template_id,titulo,contenido]
+          "Archivo":     [archivo,thumbnail]

@@ -1,0 +1,239 @@
+#container{
+  width: 100%;
+  background-color:white;
+  font-size:inherit;
+  color: black;
+}
+
+
+.feed
+{
+  padding-left: 20px;
+  background: transparent url(../images/feed.png) no-repeat 0 0;
+}
+
+.help
+{
+  color: #B5B5B5;
+  font-size: 80%;
+  font-style: italic;
+}
+
+.search .help {
+  color: #fff;
+}
+
+.error_list
+{
+  color: red;
+}
+
+strong
+{
+  font-weight: bold;
+}
+
+em
+{
+  font-style: italic;
+}
+
+.flash_notice
+{
+  margin: 3px 0;
+  padding: 7px;
+  background-color: #cfc;
+}
+
+.flash_error
+{
+  margin: 3px 0;
+  padding: 7px;
+  background-color: #f33;
+  color: #fff;
+}
+
+#Encabezado_Login{
+	height:100px;
+	width:100%;
+	background-image:url(../images/bg-header.jpg);
+	background-repeat:repeat-x;
+	border-bottom-width: 6px;
+	border-bottom-style: solid;
+	border-bottom-color: #933;
+}
+
+#FormLogin h1
+{
+	font-size: 30px;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #000;
+	background-image: url(../images/seperator_line.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	padding-bottom: 0px;
+	padding-left: 30px;
+	width: 600px;
+	text-align:left;
+
+}
+#FormLogin .slogan {
+	font-weight:bold;
+	text-align:left;
+	font-family: Verdana, Geneva, sans-serif;
+	text-transform:lowercase;
+	width:45%
+}
+
+#FormLogin form{
+    padding-top: 20px;
+}
+
+#FormLogin input[type=text],#FormLogin input[type=password]{
+	font-size:24px;
+        width:97%;
+        padding:5px;
+        margin-top:2px;
+        margin-right:6px;
+        margin-bottom:16px;
+        border:2px solid #e5e5e5;
+        background:#fbfbfb;
+        font-size: large;
+}
+#FormLogin input{
+   margin-left: 10px;
+   float: left;
+}
+
+
+#FormLogin form label{
+    font-weight: bold;
+}
+#FormLogin form input[type=button]{
+    float: right;
+    font-weight: bold;
+}
+
+#content #div_form_fans-backend{
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+
+
+}
+#menu_categorias-backend{
+    background: none;
+    padding-top: 0px;
+
+}
+#menu_categorias-backend ul li{
+    list-style-type: none;
+    display: inline;
+    font-size: 14px;
+    font-weight:  bold;
+}
+
+#menu_categorias-backend ul{
+    margin: 0 auto;
+}
+span.controles-contenedor-galeria{
+    position:relative;
+    top: 0px;
+    left: -100px;
+    height: 60px;
+    width: 150px;
+    background-color: black;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    z-index: 1000;
+
+}
+span.controles-contenedor-galeria img{
+    position: relative;
+    top: 10px;
+    padding-left: 20px;
+    z-index: 2000;
+}
+
+.button {
+background: #222 url(../images/overlay-button.png) repeat-x 0 0;
+display: inline-block;
+padding: 5px 15px 6px;
+color: white !important;
+font-size: 13px;
+font-weight: bold;
+line-height: 1;
+text-decoration: none;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+position: relative;
+cursor: pointer;
+overflow: visible;
+width: auto;
+}
+
+.super.button { 
+    background-image: url(../images/36px-blended.png); 
+    padding: 4px 14px 6px; 
+    border: 1px solid rgba(0,0,0,.25); 
+    border-bottom-color: rgba(0,0,0,.35); 
+    -webkit-border-radius: 15px; 
+    -moz-border-radius: 15px; 
+}
+.small.super.button { 
+    font-size: 11px; 
+    -webkit-border-radius: 12px; 
+    -moz-border-radius: 12px; 
+}
+.large.super.button { 
+    background-position: 0 0; 
+    padding: 6px 17px 8px; 
+    -webkit-border-radius: 18px; 
+    -moz-border-radius: 18px; 
+}
+.super.button span {
+display: block;
+padding: 4px 15px 6px;
+-webkit-border-radius: 14px;
+-moz-border-radius: 14px;
+border-top: 1px solid rgba(255, 255, 255, .2);
+line-height: 1;
+}
+.secondary.button {
+background: white url(../images/36px-black.png) repeat-x 0 0;
+color: #555 !important;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+border: 1px solid #BBB;
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.secondary.button:hover { 
+    background-color: #eee; 
+}
+
+/*#sf_admin_container{
+    padding-top: 0;
+}
+#sf_admin_container h1{
+    padding-top: 5px;
+    margin-top: 5px;
+}
+#sf_admin_container ul li.sf_admin_action_marcar a
+{
+      background: url(../images/arroba.png) no-repeat 0 0;
+}
+#sf_admin_container ul.galery li a{
+    padding: 0;
+}*/
+div.sf_admin_list{
+    height: 10px;
+}

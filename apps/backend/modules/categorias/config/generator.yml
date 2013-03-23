@@ -1,0 +1,41 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           CategoriasPublicaciones
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          categorias_publicaciones
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        categoria: {label: Categoria}
+        position: {label: Orden}
+        is_active: {label: Activa}
+      list:
+        title: Categorias de Publicaciones
+        display: [position,categoria,is_active]
+        sort: [position, asc]
+        object_actions:
+          Arriba:
+            action: promote
+          Abajo:
+            action: demote
+          _edit: {label: Editar}
+          _delete: {label: Eliminar}
+      filter:  ~
+      form:    
+      edit:
+        title:               Modificar Categoria "%%categoria%%"
+        display:
+          "Publicaciones":        [_photoUpload]
+          "Categorias":      [categoria,is_active]
+      new:
+        title:               Crear Categoria
+        display:
+          "Categorias":       [categoria, is_active]

@@ -1,0 +1,65 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+#richpolis.localhost
+dev:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=sfjerryml
+      username: root
+      password: root
+      persistent: true
+
+
+#phrenesis
+#prod:
+#  doctrine:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn:      mysql:host=localhost;dbname=phrenesi_jerryml
+#      username: phrenesi_jerryml
+#      password: ]H{c4pWMi*D@
+#      persistent: true
+
+#ipage
+#all:
+#  doctrine:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn:      mysql:host=jerrymlhostcom1.ipagemysql.com;dbname=sfjerryml
+#      username: jerrymlcom
+#      password: j3rrimlc0m
+#      persistent: true
+
+
+prod:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=jerryml_page
+      username: jerryml_jerryml
+      password: j3rrimlc0m
+      persistent: true
+
+
+
+      
+#SS DB CONFIG
+#prod:
+#  doctrine:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn:      mysql:host=internal-db.s91113.gridserver.com;dbname=db91113_genera
+#      username:  db91113_admin  db131475
+#      password: 56fubu124817
+
+
+#dev:
+#  doctrine:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn:      'mysql:host=localhost;dbname=JerryML;unix_socket=/Applications/MAMP/tmp/mysql/mysql.sock'
+#      username: root
+#      password: 56fubu124817
+#      persistent: true

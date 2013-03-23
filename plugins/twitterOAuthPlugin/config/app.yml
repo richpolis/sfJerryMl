@@ -1,0 +1,5 @@
+all:
+  twitter_consumer_key: 'j331Eo9FIEqglu2e2waE2w'
+  twitter_consumer_secret: 'PhZQYDS2E4Ys8dMAqwyX9VVG3lpLcKUbN0sIsa4sU0M'
+  twitter_access_token: '179341683-1MLB4HXvvnU7ewFGI9xQgRo2R68FNxCKDRLBEyM9'
+  twitter_access_token_secret: 'iE0zVv0kvUaBZrxTPLVLocaSezjosteM1DN0iVWdnQ'

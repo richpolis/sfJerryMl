@@ -1,0 +1,25 @@
+CategoriasPublicaciones:
+  categoria_1:
+    categoria: Categoria 1
+  categoria_2:
+    categoria: Categoria 2
+  categoria_3:
+    categoria: Categoria 3
+
+CategoriasTalento:
+  categoria_especial_1:
+    categoria: 'Actores'
+  categoria_especial_2:
+    categoria: 'Conductores'
+  categoria_especial_3:
+    categoria: 'Desarrollo'
+  categoria_especial_4:
+    categoria: 'Actores2'
+  categoria_especial_5:
+    categoria: 'Conductores2'
+    
+CategoriasVentas:
+  categoria_ventas_1:
+    categoria: 'Ventas'
+  categoria_ventas_2:
+    categoria: 'Backstage'   

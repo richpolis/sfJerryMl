@@ -1,0 +1,75 @@
+<section class="section-categorias-talento">
+    <article class="categorias-talento-item">
+        <h3>actores</h3>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <a href="#" class="control">
+            actores <img src="/images/jerryml/talento/categorias/icono_flechita.png"/>
+        </a>
+    </article>
+    <article class="categorias-talento-item">
+        <h3>conductores</h3>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <a href="#" class="control">
+            conductores <img src="/images/jerryml/talento/categorias/icono_flechita.png"/>
+        </a>
+    </article>
+    <article class="categorias-talento-item">
+        <h3>desarrollo</h3>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <div class="categorias-talento-item-imagen">
+            <img src="/images/jerryml/talento/categorias/cuadro.jpg"/>
+        </div>
+        <a href="#" class="control">
+            desarrollo <img src="/images/jerryml/talento/categorias/icono_flechita.png"/>
+        </a>
+    </article>
+    
+</section>

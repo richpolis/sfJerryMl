@@ -1,0 +1,1 @@
+$('#registro-<?php echo $registro_id ?>').effect('drop');

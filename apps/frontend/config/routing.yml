@@ -1,0 +1,111 @@
+newsletter:
+  url:   /newsletter
+  param: { module: home, action: newsletter }
+
+view_newsletter:
+  url: /view/newsletter/:slug
+  class:   sfDoctrineRoute
+  options: { model: TemplatesNewsletters, type: object }
+  param: {module: home, action: viewNewsletter}
+
+enviar_newsletter:
+  url: /enviar/newsletter/:slug
+  class:   sfDoctrineRoute
+  options: { model: TemplatesNewsletters, type: object }
+  param: {module: home, action: enviarNewsletter}  
+  requirements:
+    sf_method: [post]
+    
+categorias_talento:
+  url:   /talentos
+  param: { module: talento, action: index }
+
+categoria_talento:
+  url: /talentos/:slug
+  class:   sfDoctrineRoute
+  options: { model: CategoriasTalento, type: object }
+  param: {module: talento, action: categoria}  
+
+talento_perfil:
+  url: /talento/:categoria_slug/:slug
+  class:   sfDoctrineRoute
+  options: { model: Talento, type: object }
+  param: {module: talento, action: talento}  
+  
+ventas:
+  url:   /ventas
+  param: { module: ventas, action: index }  
+
+backstage_ultimas_notas:
+  url:   /backstage
+  param: { module: backstage, action: index }
+
+categorias_backstage:
+  url: /backstage/:slug
+  class:   sfDoctrineRoute
+  options: { model: CategoriasBackstage, type: object }
+  param: {module: backstage, action: categoria}
+
+backstage:
+  url: /backstage/:categoria_slug/:slug
+  class:   sfDoctrineRoute
+  options: { model: Backstage, type: object }
+  param: {module: backstage, action: publicacion}
+
+contacto:
+  url:   /contacto
+  param: { module: home, action: contacto }
+
+publicaciones_ultimas_notas:
+  url: /publicaciones
+  param: {module: publicaciones, action: index}
+
+categorias_publicaciones:
+  url: /publicaciones/:slug
+  class:   sfDoctrineRoute
+  options: { model: CategoriasPublicaciones, type: object }
+  param: {module: publicaciones, action: categoria}
+
+publicacion:
+  url: /publicacion/:categoria_slug/:slug
+  class:   sfDoctrineRoute
+  options: { model: Publicaciones, type: object }
+  param: {module: publicaciones, action: publicacion}
+
+render_imagenes:
+  url:      /imagenes/:path/:width/:height/:imagen.:sf_format
+  param: { module: home, action: renderImagen } 
+  requirements:
+    imagen:  '[\w/]+'
+    sf_format: 'gif|png|jpg|jpeg|JPG'
+    path: 'galeria|publicaciones|ventas|talento'
+    sf_method: [get]
+  options:
+    image_source: File 
+
+render_imagenes_grayscale:
+  url:      /imagenes/grayscale/:path/:width/:height/:imagen.:sf_format
+  param: { module: home, action: renderGrayscaleImagen } 
+  requirements:
+    imagen:  '[\w/]+'
+    sf_format: 'gif|png|jpg|jpeg|JPG'
+    path: 'galeria|publicaciones|ventas|talento'
+    sf_method: [get]
+  options:
+    image_source: File 
+ 
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+        
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+        
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+homepage:
+  url:   /
+  param: { module: home, action: index }

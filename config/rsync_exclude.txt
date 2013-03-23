@@ -1,0 +1,27 @@
+# Project files
+/cache/*
+/log/*
+/web/*_dev.php
+/web/uploads/*
+#AGREGAR FALTANTES
+/web/images/clientes/*
+/web/images/eventos/*
+/web/images/novedades/*
+/web/images/produccion/*
+/web/images/medios/*
+/web/images/management*
+/web/images/noticias*
+/web/images/slider*
+/web/images/slider_img*
+/web/assets/*
+/data/*
+/web/uploads/*
+# SCM files
+.arch-params
+.bzr
+_darcs
+.git
+.hg
+.monotone
+.svn
+CVS

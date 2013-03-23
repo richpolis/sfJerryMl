@@ -1,0 +1,41 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           PublicacionesGaleria
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          publicaciones_galeria
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        publicacion_id: {label: Publicacion}
+        publicaciones: {label: Publicacion}
+        position: {label: Orden}
+        titulo: {label: Titulo}
+        
+      list:
+        title: Galeria de Publicaciones
+        display: [publicaciones,position,titulo]
+        sort: [position, asc]
+        object_actions:
+          _edit: {label: Editar}
+          _delete: {label: Eliminar}
+#        table_method: retrieveBackendPublicacionesList
+      filter:  ~
+      form:    
+      edit:
+        title:            Modificar Registro de Galeria de Publicacion "%%titulo%%"
+        display:
+          "Registro":     [publicacion_id,titulo,contenido]
+          "Archivo":     [archivo,thumbnail]
+      new:
+        title:            Crear Registro de Galeria de Publicacion
+        display:
+          "Registro":     [publicacion_id,titulo,contenido]
+          "Archivo":     [archivo,thumbnail]

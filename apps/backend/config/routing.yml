@@ -1,0 +1,310 @@
+upload_lista_correos:
+  url:     /upload/lista/correos
+  param:   { module: newsletter, action: upload }
+  requirements:
+    sf_method: [post]
+
+movimientos_newsletters:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MovimientosNewsletters
+    module:               movimientos_newsletters
+    prefix_path:          /movimientos/newsletters
+    column:               id
+    with_wildcard_routes: true
+
+publicaciones_newsletters:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PublicacionesNewsletters
+    module:               publicaciones_newsletters
+    prefix_path:          /publicaciones/newsletters
+    column:               id
+    with_wildcard_routes: true
+
+templates_newsletters:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TemplatesNewsletters
+    module:               templates_newsletters
+    prefix_path:          /templates/newsletters
+    column:               id
+    with_wildcard_routes: true
+
+backstage_galeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                BackstageGaleria
+    module:               gbackstage
+    prefix_path:          /backstage/galeria
+    column:               id
+    with_wildcard_routes: true
+
+backstage:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Backstage
+    module:               backstage
+    prefix_path:          /backstage
+    column:               id
+    with_wildcard_routes: true
+
+categorias_backstage:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoriasBackstage
+    module:               catbackstage
+    prefix_path:          /categorias/backstage
+    column:               id
+    with_wildcard_routes: true
+
+newsletter:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Newsletter
+    module:               newsletter
+    prefix_path:          /newsletter
+    column:               id
+    with_wildcard_routes: true
+
+talento_galeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TalentoGaleria
+    module:               gtalento
+    prefix_path:          /talento/galeria
+    column:               id
+    with_wildcard_routes: true
+
+talento:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Talento
+    module:               talento
+    prefix_path:          /talento
+    column:               id
+    with_wildcard_routes: true
+
+categorias_talento:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoriasTalento
+    module:               cattalento
+    prefix_path:          /categorias/talento
+    column:               id
+    with_wildcard_routes: true
+
+configuracion:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Configuracion
+    module:               configuracion
+    prefix_path:          /configuracion
+    column:               id
+    with_wildcard_routes: true
+
+ventas_galeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                VentasGaleria
+    module:               gventas
+    prefix_path:          /ventas/galeria
+    column:               id
+    with_wildcard_routes: true
+
+ventas:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Ventas
+    module:               ventas
+    prefix_path:          /ventas
+    column:               id
+    with_wildcard_routes: true
+
+categorias_ventas:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoriasVentas
+    module:               catventas
+    prefix_path:          /categorias/ventas
+    column:               id
+    with_wildcard_routes: true
+
+publicaciones_galeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PublicacionesGaleria
+    module:               gpublicaciones
+    prefix_path:          /publicaciones/galeria
+    column:               id
+    with_wildcard_routes: true
+
+publicaciones:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Publicaciones
+    module:               publicaciones
+    prefix_path:          /publicaciones
+    column:               id
+    with_wildcard_routes: true
+
+categorias_publicaciones:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoriasPublicaciones
+    module:               categorias
+    prefix_path:          /categorias/publicaciones
+    column:               id
+    with_wildcard_routes: true
+
+publicaciones_ajax_registro_delete:
+  url:     /publicaciones/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: Publicaciones, type: object }
+  param:   { module: categorias, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+
+ventas_ajax_registro_delete:
+  url:     /ventas/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: Ventas, type: object }
+  param:   { module: catventas, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+    
+talento_ajax_registro_delete:
+  url:     /talento/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: Talento, type: object }
+  param:   { module: cattalento, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+    
+publicaciones_newsletters_ajax_registro_delete:
+  url:     /publicaciones/newsletters/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: PublicacionesNewsletters, type: object }
+  param:   { module: templates_newsletters, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post] 
+
+
+backstage_galeria_ajax_registro_liste:
+  url:     /backstage/galeria/ajax/:id/list
+  class:   sfDoctrineRoute
+  options: { model: Backstage, type: object }
+  param:   { module: backstage, action: ajaxRegistrosLista }
+  requirements:
+    sf_method: [post]
+
+backstage_galeria_upload:
+  url:     /backstage/galeria/ajax/upload
+  param:   { module: backstage, action: upload}
+  
+backstage_galeria_ajax_registro_delete:
+  url:     /backstage/galeria/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: BackstageGaleria, type: object }
+  param:   { module: backstage, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+
+backstage_ajax_registro_delete:
+  url:     /backstage/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: Backstage, type: object }
+  param:   { module: catbackstage, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+
+talento_galeria_ajax_registro_liste:
+  url:     /talento/galeria/ajax/:id/list
+  class:   sfDoctrineRoute
+  options: { model: Talento, type: object }
+  param:   { module: talento, action: ajaxRegistrosLista }
+  requirements:
+    sf_method: [post]
+
+talento_galeria_upload:
+  url:     /talento/galeria/ajax/upload
+  param:   { module: talento, action: upload}
+  
+talento_galeria_ajax_registro_delete:
+  url:     /talento/galeria/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: TalentoGaleria, type: object }
+  param:   { module: talento, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]   
+
+ventas_galeria_ajax_registro_liste:
+  url:     /ventas/galeria/ajax/:id/list
+  class:   sfDoctrineRoute
+  options: { model: Ventas, type: object }
+  param:   { module: ventas, action: ajaxRegistrosLista }
+  requirements:
+    sf_method: [post]
+
+ventas_galeria_upload:
+  url:     /ventas/galeria/ajax/upload
+  param:   { module: ventas, action: upload}
+
+ventas_galeria_ajax_registro_delete:
+  url:     /ventas/galeria/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: VentasGaleria, type: object }
+  param:   { module: ventas, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+   
+publicaciones_galeria_ajax_registro_liste:
+  url:     /publicaciones/galeria/ajax/:id/list
+  class:   sfDoctrineRoute
+  options: { model: Publicaciones, type: object }
+  param:   { module: publicaciones, action: ajaxRegistrosLista }
+  requirements:
+    sf_method: [post]
+
+publicaciones_galeria_upload:
+  url:     /publicaciones/galeria/ajax/upload
+  param:   { module: publicaciones, action: upload}
+
+publicaciones_galeria_ajax_registro_delete:
+  url:     /publicaciones/galeria/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: PublicacionesGaleria, type: object }
+  param:   { module: publicaciones, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+
+   
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+        
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+        
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+
+# default rules
+homepage:
+  url:   /
+  param: { module: sfAdminDash, action: dashboard }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

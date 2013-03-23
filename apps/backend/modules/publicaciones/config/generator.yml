@@ -1,0 +1,40 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Publicaciones
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          publicaciones
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        categoria_id: {label: Categoria}
+        categorias_publicaciones: {label: Categoria}
+        position: {label: Orden}
+        titulo: {label: Titulo}
+        is_active: {label: Activa, help: 'Para desactivar o activar publicacion'}
+      list:
+        title: Publicaciones
+        display: [categorias_publicaciones,position,titulo,is_active]
+        sort: [position, asc]
+        object_actions:
+          _edit: {label: Editar}
+          _delete: {label: Eliminar}
+        table_method: retrieveBackendCategoriasList
+      filter:  ~
+      form:    
+      edit:
+        title:               Modificar Publicacion "%%titulo%%"
+        display:
+          "Galeria":        [_photoUpload]
+          "Publicacion":      [categoria_id,titulo,contenido,is_active]
+      new:
+        title:               Crear Publicacion
+        display:
+          "Categorias":       [categoria_id,titulo,contenido,is_active]

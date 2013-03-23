@@ -1,0 +1,81 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  meta:
+    creator:      'Jerry ML'
+    title:        'Lista de correos'
+    subject:      'Newsletter'
+    description:  'Lista de correos de Newsletter'
+    keywords:     'Newsletter, Email'
+    category:     'Lista de correos'
+  sfImageTransformPlugin:
+    default_adapter: GD
+    mime_type:
+      auto_detect: true
+      library: gd_mime_type
+  sf_admin_dash:
+    web_dir:                    /sfAdminDashPlugin
+    image_dir:                  /sfAdminDashPlugin/images/icons/
+    default_image:              config.png
+    resize_mode:                thumbnail
+    site:                       'Jerry ML'
+    include_path:               true
+    include_jquery_no_conflict: false
+    logout:                     true
+    login_route:                @sf_guard_signin
+    logout_route:               @sf_guard_signout
+    categories:
+      Administracion:
+        items:
+          'Usuarios':
+            url:          sf_guard_user
+            image:        users.png
+            credentials:  [admin]
+          Grupos:
+            url:          sf_guard_group
+            image:        addusers.png
+            credentials:  [admin]
+          Permisos:
+            url:          sf_guard_permission
+            image:        config.png
+            credentials:  [admin]
+          Configuracion:
+            url:          configuracion
+            image:        cpanel.png
+            credentials:  [admin]
+      Publicaciones:
+        items:
+          'Prensa y Notas':
+            url:          categorias_publicaciones
+            image:        mediamanager.png
+            credentials:  [[publicaciones,admin]]
+          'Backstage':
+            url:          categorias_backstage
+            image:        mediamanager.png
+            credentials:  [[publicaciones,admin]]  
+          'Secciones Talento':
+            url:          categorias_talento
+            image:        module.png
+            credentials:  [[principales,admin]]
+          'Ventas':
+            url:          categorias_ventas
+            image:        support.png
+            credentials:  [[principales,admin]]
+      Newsletters:
+        items:
+          'Lista de Correos':
+            url:          newsletter
+            image:        message_config.png
+            credentials:  [admin]  
+          'Templates':
+            url:          templates_newsletters
+            image:        mediamanager.png
+            credentials:  [[publicaciones,admin]]  
+          'Envios':
+            url:          movimientos_newsletters
+            image:        module.png
+            credentials:  [[principales,admin]]
+              
+      

@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Jerry ML
+    description:  Jerry ML Management
+    keywords:     Montserrat Oliver,Galilea Montijo,Ana Brenda,Vanessa Huppenkothen,Celebridades,Celebrities,Agencia de representación,Artistas,Manager,Managers,Relaciones Públicas
+    language:     es
+    #robots:       index, follow
+
+  stylesheets:    [main.css]
+
+  javascripts:    [jquery-1.4.4.min.js]
+
+  has_layout:     true
+  layout:         layout

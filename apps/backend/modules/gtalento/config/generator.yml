@@ -1,0 +1,42 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           TalentoGaleria
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          talento_galeria
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        publicacion_id: {label: Seccion Talento}
+        talento: {label: Seccion Talento}
+        position: {label: Orden}
+        titulo: {label: Titulo}
+        
+      list:
+        title: Galeria de Publicaciones de Secciones Talento
+        display: [talento,position,titulo]
+        sort: [position, asc]
+        object_actions:
+          _edit: {label: Editar}
+          _delete: {label: Eliminar}
+#        table_method: retrieveBackendPublicacionesList
+      filter:  ~
+      form:    
+      edit:
+        title:            Modificar Registro de Galeria de Secciones Talento "%%titulo%%"
+        display:
+          "Registro":     [publicacion_id,titulo,contenido]
+          "Archivo":     [archivo,thumbnail]
+      new:
+        title:            Crear Registro de Galeria de Secciones Talento
+        display:
+          "Registro":     [publicacion_id]
+          "Archivo":     [archivo,thumbnail]
+

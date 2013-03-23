@@ -1,0 +1,30 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Newsletter
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          newsletter
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        actions:
+          _new: ~
+          exportar: {label: 'Exportar'}
+          limpiar: {label: 'Borrar archivo actual'}
+        title: Lista de correos Newsletter
+        display: [position,nombre,email,is_active]
+        sort: [position, asc]
+        batch_actions:
+          _delete:   ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

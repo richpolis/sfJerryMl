@@ -1,0 +1,39 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           CategoriasVentas
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          categorias_ventas
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        categoria: {label: Categoria}
+        slug: {label: Slug}
+        bloque: {label: Bloque}
+      list:
+        title: Categorias de Ventas
+        display: [bloque,categoria,slug]
+        sort: [bloque, asc]
+        object_actions:
+          _edit: {label: Editar}
+          _delete: {}
+        batch_actions: {}
+      filter:  ~
+      form:    
+      edit:
+        title:               Actualizar Categoria "%%categoria%%"
+        display:
+          "Categorias":      [categoria]
+          "Publicaciones":          [_photoUpload]
+      new: 
+        title:               Crear Categoria
+        display:
+          "Categorias":      [categoria]
+

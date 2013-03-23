@@ -1,0 +1,42 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Ventas
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          ventas
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        categoria_id: {label: Categoria}
+        titulo: {label: Titulo}
+        contenido: {label: Contenido}
+        disponible_para: {label: 'Disponible Para'}
+        is_active: {label: 'Activa?', help: 'Para activar o desactivar ventas'}
+        categorias: {label: Categorias}
+        thumbnail: {label: Archivo}
+        categorias_ventas: {label: Categoria}
+      list:
+        title: Publicaciones Ventas/Backstage
+        display: [categorias_ventas,titulo,categorias,is_active]
+        sort: [position, asc]
+        object_actions:
+          _edit: {label: Editar}
+          _delete: {label: Eliminar}
+        table_method: retrieveBackendCategoriasList
+      filter:  ~
+      form:    
+      edit:
+        title:               Modificar Publicacion Ventas/Backstage "%%titulo%%"
+        display:
+          "Publicacion":     [categoria_id,titulo,categorias,contenido,disponible_para,thumbnail,is_active]
+      new:
+        title:               Crear Publicacion Ventas/Backstage
+        display:
+          "Publicacion":      [categoria_id,titulo,categorias,contenido,disponible_para,thumbnail,is_active]

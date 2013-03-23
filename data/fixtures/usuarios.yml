@@ -1,0 +1,16 @@
+sfGuardUser:
+  User_admin:
+    first_name:     Richpolis
+    last_name:      Systems
+    email_address:  richpolis@gmail.com
+    username:       Richpolis
+    password:       D3m3s1s1
+    is_super_admin: true
+  User_jerryml:
+    first_name:     Jerry
+    last_name:      ML
+    email_address:  contacto@jerryml.com
+    username:       JerryML
+    password:       1234567
+    is_super_admin: false
+    

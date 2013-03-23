@@ -1,0 +1,9 @@
+## YAML Template.
+viewNewsletter:
+  is_secure: off
+  
+enviarNewsletter:
+  is_secure: off
+ 
+#all:
+#  is_secure: off
